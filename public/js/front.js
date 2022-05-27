@@ -18418,7 +18418,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
-window.Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -18427,11 +18427,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: [{
     path: "/",
     name: "home",
-    componenet: _pages_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _pages_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
     path: "/posts",
     name: "posts",
-    componenet: _pages_Posts__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _pages_Posts__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 });
 var app = new Vue({

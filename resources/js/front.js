@@ -6,9 +6,7 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router'
 import App from "./view/App";
 
-
-
-window.Vue.use(VueRouter);
+Vue.use(VueRouter);
 
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
@@ -20,12 +18,12 @@ const router = new VueRouter({
         {
             path:"/",
             name: "home",
-            componenet: Home
+            component: Home
         },
         {
             path:"/posts",
             name: "posts",
-            componenet: Posts
+            component: Posts
         },
     ],
 
