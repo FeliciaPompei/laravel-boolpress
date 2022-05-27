@@ -2101,7 +2101,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AboutUs",
+  data: function data() {
+    return {
+      paragraph: 'This Boolpress is a production by a boolean student, given the task of reproducting a well known page: wordPress.'
+    };
+  }
+});
 
 /***/ }),
 
@@ -2120,7 +2133,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Contacts"
+});
 
 /***/ }),
 
@@ -3654,7 +3673,15 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container my-size-vh" }, [
-    _vm._v("\n    About Us\n"),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("p", [
+          _vm._v(
+            "\n                " + _vm._s(_vm.paragraph) + "\n            "
+          ),
+        ]),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -3679,11 +3706,24 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container my-size-vh" }, [
-    _vm._v("\n    Contacts\n"),
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container my-size-vh" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _vm._v(
+            "\n            To contacts us, lease fill out this form\n        "
+          ),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
