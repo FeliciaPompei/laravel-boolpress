@@ -17,9 +17,10 @@
                 </li>
             </ul>
         </div>
-        <div class="col-4 d-flex justify-content-center">
-            <!-- <img class="w-50"src="{{asset('images/footer-logo.jpg')}} " alt="Car logo"> -->
-            Img
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <img class="img-fluid w-50 h-50"
+            src="img/Boolpress.jpg"
+            alt="boolpress logo">
         </div>
     </div>
 

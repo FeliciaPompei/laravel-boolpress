@@ -10,6 +10,8 @@ Vue.use(VueRouter);
 
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
+import Contacts from "./pages/Contacts";
+import About from "./pages/About";
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -21,10 +23,21 @@ const router = new VueRouter({
             component: Home
         },
         {
+            path:"/about-us",
+            name: "about",
+            component: About
+        },
+        {
             path:"/posts",
             name: "posts",
             component: Posts
         },
+        {
+            path:"/contacts",
+            name: "contacts",
+            component: Contacts
+        },
+
     ],
 
 })

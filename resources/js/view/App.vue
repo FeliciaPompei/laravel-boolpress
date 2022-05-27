@@ -21,5 +21,7 @@ export default {
 }
 </script>
 <style lang="scss">
-
+.my-size-vh{
+    height: 56.7vh;
+}
 </style>

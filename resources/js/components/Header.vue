@@ -2,8 +2,11 @@
     <header class="container-fluid mb-3">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Boolbogger</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid w-50"
+                    src="img/BoolPress.jpg" alt="boolpress logo">
+                </a>
+                <div>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"
                         v-for="(navLink, index) in navLinks" :key="index">
@@ -29,8 +32,16 @@ export default {
                     name: "Home"
                 },
                 {
+                    routeLink: "about",
+                    name: "About"
+                },
+                {
                     routeLink: "posts",
                     name: "Posts"
+                },
+                {
+                    routeLink: "contacts",
+                    name: "Contacts"
                 }
             ]
         }
