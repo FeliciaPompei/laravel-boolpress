@@ -26,17 +26,6 @@
         </p>
     </div>
 </div>
-
-    <!-- <div>
-        <h1>
-            {{post.title}}
-        </h1>
-        <img :src="post.post_image" :alt="post.title">
-
-        <p>
-            {{post.content}}
-        </p>
-    </div> -->
 </template>
 
 <script>
