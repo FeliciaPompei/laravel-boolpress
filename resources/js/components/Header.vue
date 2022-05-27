@@ -1,23 +1,40 @@
 <template>
-    <header class="text-info">
-        <ul>
-            <li>
-                <router-link :to="{ name: 'posts'}">
-                    Posts
-                </router-link>
-            </li>
-            <li>
-                <router-link :to="{ name: 'home'}">
-                    Home
-                </router-link>
-            </li>
-        </ul>
+    <header class="container-fluid mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Boolbogger</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"
+                        v-for="(navLink, index) in navLinks" :key="index">
+                            <router-link class="nav-link"
+                            :to="{ name: navLink.routeLink}">
+                                {{navLink.name}}
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 </template>
-
 <script>
 export default {
     name: "headerIndex",
+    data(){
+        return{
+            navLinks:[
+                {
+                    routeLink: "home",
+                    name: "Home"
+                },
+                {
+                    routeLink: "posts",
+                    name: "Posts"
+                }
+            ]
+        }
+    }
 }
 </script>
 
