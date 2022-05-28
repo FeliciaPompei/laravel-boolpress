@@ -13,6 +13,7 @@ import Posts from "./pages/Posts";
 import Contacts from "./pages/Contacts";
 import About from "./pages/About";
 
+
 Vue.use(VueRouter)
 const router = new VueRouter({
     mode: 'history',

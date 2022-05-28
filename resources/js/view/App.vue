@@ -21,7 +21,14 @@ export default {
 }
 </script>
 <style lang="scss">
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 .my-size-vh{
     height: 56.7vh;
+}
+h1{
+    font-size:3.5rem;
+    color:gray;
 }
 </style>
