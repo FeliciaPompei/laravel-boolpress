@@ -36,7 +36,9 @@
                                 <td>{{$post->created_at}}</td>
                                 <td>
                                     @foreach ($post->categories as $category)
-                                        {{$category->name}}
+                                        <span class="badge text-black" style="background-color : {{$category->colour}}">
+                                            {{$category->name}}
+                                        </span>
                                     @endforeach
                                 </td>
                                 <td>{{$post->user->name}}</td>
