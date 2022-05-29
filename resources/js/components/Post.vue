@@ -15,13 +15,13 @@
         <blockquote class="blockquote mb-2">
             <footer class="blockquote-footer">
                 <cite title="Source Title">
-                    {{post.author}}
+                    {{post.updated_at}}
                 </cite>
             </footer>
         </blockquote>
         <p class="card-text">
             <small class="text-muted">
-                {{post.updated_at}}
+
             </small>
         </p>
     </div>
