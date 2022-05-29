@@ -16,11 +16,11 @@ class CreateCategoryPostTable extends Migration
         Schema::create('category_post', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')
-            ->reference('id')
+            ->references('id')
             ->on('categories');
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')
-            ->reference('id')
+            ->references('id')
             ->on('posts');
         });
     }

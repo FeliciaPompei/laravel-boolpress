@@ -29,7 +29,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($posts as $post )
+                        @forelse ($posts as $post)
                             <tr>
                                 <th scope="row">{{$post->id}}</th>
                                 <td>{{$post->title}}</td>
@@ -39,7 +39,7 @@
                                         {{$category->name}}
                                     @endforeach
                                 </td>
-                                <td>{{$post->author}}</td>
+                                <td>{{$post->user->name}}</td>
                                 <td>
                                     <a href="{{route('admin.posts.show', $post->id )}} " class="btn btn-primary">
                                         Read More
@@ -63,7 +63,7 @@
                             </tr>
                         @empty
                             <h2>
-                                Resigner or log in to see posts
+                                You have no Posts
                             </h2>
                         @endforelse
                     </tbody>
