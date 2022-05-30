@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\Category;
 
 class PostsController extends Controller
 {
@@ -27,7 +29,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view("admin.posts.create");
+        $categories = Category::all();
+        return view("admin.posts.create", compact('categories'));
     }
 
     /**
@@ -41,14 +44,18 @@ class PostsController extends Controller
         $request->validate([
             "title" => "required|min:8",
             "post_image"=> "required",
-            "author"=> "required",
             "content"=> "required|min:10",
         ]);
         $data = $request->all();
 
+        $data['user_id'] = Auth::user()->id;
+
         $post = new Post();
         $post->fill($data);
+        $post->post_image = Storage::put('uploads', $data['post_image']);
         $post->save();
+
+        $post->categories()->sync($data['category']);
 
         return redirect()->route("admin.posts.show", compact('post'))->with("message", "$post->title has been created with success");
     }

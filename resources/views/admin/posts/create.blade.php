@@ -17,7 +17,10 @@
         @endif
 
         <div class="col-6 py-3">
-            <form class="text-center" action="{{route("admin.posts.store")}}" method="POST">
+            <form class="text-center"
+            action="{{route("admin.posts.store")}}"
+            method="POST"
+            enctype="multipart/form-data">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text">Title</span>
@@ -32,7 +35,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">post image</span>
-                    <input type="text" class="form-control" name="post_image">
+                    <input type="file" id="post_image" name="post_image">
                 </div>
                 <div class="col-12">
                     @error('post_image')
@@ -41,12 +44,17 @@
                         </h5>
                     @enderror
                 </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Author</span>
-                    <input type="text" class="form-control" name="author">
+                <div class="mb-3">
+                    @foreach ($categories as $category)
+                        <input class="form-check-input" type="checkbox"
+                        name="category[]" value="{{$category->id}}">
+                        <label for="categories" class="badge rounded-pill me-3" style="background-color: {{ $category->colour }}">
+                            {{$category->name}}
+                        </label>
+                    @endforeach
                 </div>
                 <div class="col-12">
-                    @error('author')
+                    @error('categories')
                         <h5 class="alert alert-danger">
                             {{ $message }}
                         </h5>

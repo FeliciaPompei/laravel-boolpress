@@ -11,7 +11,12 @@
             @endif
         </div>
         <div class="col-6 p-4">
-            <img src="{{$post->post_image}}" alt="{{$post->title}} ">
+            @if (str_starts_with($post->post_image, 'https://'))
+            <img src="{{$post->post_image}}" alt="{{$post->title}}">
+            @else
+            <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->title}}">
+            @endif
+
         </div>
         <div class="col-6 p-4">
             <h1>
