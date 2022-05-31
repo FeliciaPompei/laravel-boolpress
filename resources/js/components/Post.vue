@@ -1,7 +1,15 @@
 <template>
 <div class="card mb-3">
-    <div class="img-wrapper bg-dark text-center mb-3">
-        <img class="card-img-top" :src="post.post_image" :alt="post.title">
+    <div class="img-wrapper bg-dark text-center mb-3"
+        v-if = "post.post_image.startsWith('https://')">
+            <img
+            :src="post.post_image"
+            :alt="post.title">
+    </div>
+    <div class="img-wrapper bg-dark text-center mb-3" v-else>
+        <img
+        :src="`storage/${post.post_image}`"
+        :alt="post.title">
     </div>
     <div class="card-body">
         <h5 class="card-title">
