@@ -1995,6 +1995,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "headerIndex",
   data: function data() {
@@ -3698,57 +3699,62 @@ var render = function () {
       "nav",
       { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
       [
-        _c("div", { staticClass: "container-fluid" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", [
+        _c(
+          "div",
+          { staticClass: "container-fluid" },
+          [
             _c(
-              "ul",
-              { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" },
-              _vm._l(_vm.navLinks, function (navLink, index) {
-                return _c(
-                  "li",
-                  { key: index, staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { to: { name: navLink.routeLink } },
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(navLink.name) +
-                            "\n                        "
-                        ),
-                      ]
-                    ),
-                  ],
-                  1
-                )
-              }),
-              0
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: { name: _vm.navLinks[0].routeLink } },
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid w-50",
+                  attrs: { src: "img/BoolPress.jpg", alt: "boolpress logo" },
+                }),
+              ]
             ),
-          ]),
-        ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "ul",
+                { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" },
+                _vm._l(_vm.navLinks, function (navLink, index) {
+                  return _c(
+                    "li",
+                    { key: index, staticClass: "nav-item" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "nav-link",
+                          attrs: { to: { name: navLink.routeLink } },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(navLink.name) +
+                              "\n                        "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  )
+                }),
+                0
+              ),
+            ]),
+          ],
+          1
+        ),
       ]
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-      _c("img", {
-        staticClass: "img-fluid w-50",
-        attrs: { src: "img/BoolPress.jpg", alt: "boolpress logo" },
-      }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

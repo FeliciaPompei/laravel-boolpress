@@ -2,10 +2,11 @@
     <header class="container-fluid mb-3">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <router-link class="nav-link"
+                :to="{ name: navLinks[0].routeLink }">
                     <img class="img-fluid w-50"
                     src="img/BoolPress.jpg" alt="boolpress logo">
-                </a>
+                </router-link>
                 <div>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"
