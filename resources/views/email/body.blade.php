@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Email Boolpress</title>
+    <title>Mail da Boolpress</title>
 </head>
 <body>
-    <h1>
-        Grazie
-    </h1>
     <h3>
-        Questo è il email
+        <strong>
+            {{ $sender }}
+        </strong>
+        has tried to contact you through boolpress.com
+    </h3>
+    <h3>
+        {{$sender}} email address is
+        <strong>
+            {{ $senderEmail }}
+        </strong>
     </h3>
     <p>
-        contenuto
+        <pre>
+            This is the message:
+        </pre>
+        {{ $senderMessage }}
     </p>
 </body>
 </html>

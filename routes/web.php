@@ -32,9 +32,8 @@ Route::middleware('auth')
     Route::resource('categories',CategoriesController::class);
 });
 
-Route::get('/contacts', 'Guest\ContactsController@contact')->name('guest.contact');
-Route::get('/contacts', 'Guest\ContactsController@contactMailSender')->name('guest.storeContact');
-Route::get('/sent', 'Guest\ContactsController@sent')->name('guests.sent');
+Route::get('/contacts', 'Guest\ContactsController@contact')->name('guests.contact');
+Route::post('/contacts', 'Guest\ContactsController@contactMailSender')->name('guests.storeContact');
 
 Route::get("{any?}", function(){
     return view("guests.home");

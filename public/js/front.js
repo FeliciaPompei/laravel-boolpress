@@ -2104,6 +2104,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'postElement',
   props: ['post']
@@ -2159,34 +2167,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3856,12 +3836,20 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card mb-3" }, [
-    _c("div", { staticClass: "img-wrapper bg-dark text-center mb-3" }, [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: { src: _vm.post.post_image, alt: _vm.post.title },
-      }),
-    ]),
+    _vm.post.post_image.startsWith("https://")
+      ? _c("div", { staticClass: "img-wrapper bg-dark text-center mb-3" }, [
+          _c("img", {
+            attrs: { src: _vm.post.post_image, alt: _vm.post.title },
+          }),
+        ])
+      : _c("div", { staticClass: "img-wrapper bg-dark text-center mb-3" }, [
+          _c("img", {
+            attrs: {
+              src: "storage/" + _vm.post.post_image,
+              alt: _vm.post.title,
+            },
+          }),
+        ]),
     _vm._v(" "),
     _c("div", { staticClass: "card-body" }, [
       _c("h5", { staticClass: "card-title" }, [
@@ -3998,8 +3986,6 @@ var render = function () {
         ],
         2
       ),
-      _vm._v(" "),
-      _vm._m(2),
     ]),
   ])
 }
@@ -4021,76 +4007,6 @@ var staticRenderFns = [
         staticClass: "img-fluid w-25 mb-2",
         attrs: { src: "img/footer-map.jpg", alt: "footer map" },
       }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-6 my-bg-color p-4" }, [
-      _c("form", { attrs: { action: "" } }, [
-        _c("div", { staticClass: "input-group mb-3" }, [
-          _c(
-            "span",
-            { staticClass: "input-group-text", attrs: { id: "basic-addon1" } },
-            [_vm._v("\n                        User\n                    ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              placeholder: "Name and Surname",
-              "aria-label": "Username",
-              "aria-describedby": "basic-addon1",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group mb-3" }, [
-          _c(
-            "span",
-            { staticClass: "input-group-text", attrs: { id: "basic-addon1" } },
-            [_vm._v("\n                        @\n                    ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "email",
-              placeholder: "username@email.com",
-              "aria-label": "Username",
-              "aria-describedby": "basic-addon1",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group mb-3" }, [
-          _c(
-            "span",
-            { staticClass: "input-group-text", attrs: { id: "basic-addon1" } },
-            [_vm._v("\n                        Message\n                    ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              placeholder: "Write your message here",
-              "aria-label": "Username",
-              "aria-describedby": "basic-addon1",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "text-center" }, [
-          _c(
-            "button",
-            { staticClass: "btn btn-outline-dark", attrs: { type: "submit" } },
-            [_vm._v("\n                    Submit\n                ")]
-          ),
-        ]),
-      ]),
     ])
   },
 ]

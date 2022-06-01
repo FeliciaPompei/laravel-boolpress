@@ -7,24 +7,24 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-
 class SendNewMail extends Mailable
 {
     use Queueable, SerializesModels;
-    protected $author;
-    protected $authorMail;
-    protected $guestMessage;
+
+    protected $sender;
+    protected $senderMail;
+    protected $senderMessage;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($author, $authorMail, $guestMessage)
+    public function __construct($sender, $senderMail, $senderMessage)
     {
-        $this->author = $author;
-        $this->authorMail = $authorMail;
-        $this->guestMessage = $guestMessage;
+        $this->sender = $sender;
+        $this->senderMail = $senderMail;
+        $this->senderMessage = $senderMessage;
     }
 
     /**
@@ -34,9 +34,9 @@ class SendNewMail extends Mailable
      */
     public function build()
     {
-        return $this->replyTo($this->authorMail)
-        ->view('email.body', [ "author" => $this->author ,
-        "authorEmail" => $this->authorMail,
-        "guestMessage" => $this->guestMessage]);
+        return $this->replyTo($this->senderMail)
+        ->view('email.body', [ "sender" => $this->sender,
+        "senderEmail" => $this->senderMail,
+        "senderMessage" => $this->senderMessage]);
     }
 }

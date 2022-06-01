@@ -1,37 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container"></div>
-    <div class="row justify-content-center p-5">
-        <div class="col-6">
-            <form action="{{route('guest.storeContact')}} ">
-                @csrf
-                @method('POST')
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">
-                        User
-                    </span>
-                    <input type="text" class="form-control" placeholder="Name and Surname" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">
-                        @
-                    </span>
-                    <input type="email" class="form-control" placeholder="username@email.com" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">
-                        Message
-                    </span>
-                    <input type="text" class="form-control" placeholder="Write your message here" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="text-center">
-                    <button type="submit"
-                class="btn btn-outline-dark">
-                    Submit
-                </button>
-                </div>
-            </form>
+    <div class="container-fluid w-75 mx-auto">
+        <div class="row">
+            <div class="col-12">
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{session('message')}}
+                    </div>
+                @endif
+            </div>
+            <div class="col-6 mx-auto">
+                <h1> Contact us: </h1>
+                <form action="{{ route("guests.storeContact") }}" method="post">
+                    @csrf
+                    @method('POST')
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">
+                            Name
+                        </span>
+                        <input class="form-control" type="text" name="sender" id="sender" placeholder="Name and Surname">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">
+                            @
+                        </span>
+                        <input class="form-control" type="email" name="senderEmail" id="senderEmail">
+                    </div>
+                    <div class="mb-3">
+                        <span class="input-group-text" id="basic-addon1">
+                            Message
+                        </span>
+                        <textarea class="form-control" id="senderMessage" type="text" value="" name="senderMessage" rows="7"></textarea>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary" type="submit">Send</button>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

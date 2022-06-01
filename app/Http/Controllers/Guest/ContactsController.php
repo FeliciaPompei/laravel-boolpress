@@ -7,20 +7,19 @@ use Illuminate\Http\Request;
 use App\Mail\SendNewMail;
 use Illuminate\Support\Facades\Mail;
 
+
+
 class ContactsController extends Controller
 {
+
     public function contact(){
         return view('guests.contact');
     }
 
     public function contactMailSender(Request $request){
 
-        Mail::to("maildiunadminbool@gmail.com")->send(new SendNewMail($request->guestName, $request->guestEmail, $request->guestMessage));
+        Mail::to("boolpressAdmin@boolpress.com")->send(new SendNewMail($request->sender, $request->senderEmail, $request->senderMessage));
 
-        return redirect()->route('guest.sent')->with('message', "Thank you $request->guestName!!Your message has been sent correctly");
+        return redirect()->route('guests.contact')->with('message', "Thank you $request->sender!!Your message has been sent correctly");
     }
-    public function sent(){
-        return redirect('guests.sent');
-    }
-
 }
